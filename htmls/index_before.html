@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset-"utf-8">
+  <title>kenchalros</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet"
+  href="css/styles.css">
+</head>
+
+<body>
+  <header class="dark-blue-bg">
+    <div class="container">
+    <h1>kenchalros</h1>
+    <!-- <a href="#" target="_blank" class="btn">twitter <i class="fab fa-twitter"></i></a> -->
+    </div>
+  </header>
+  <section>
+    <div class="container">
+      <ul class="menu">
+        <li><a href="#" data-id="about" class="active menu_item">About</a></li>
+        <li><a href="#" data-id="service" class="menu_item">Service</a></li>
+        <li><a href="#" data-id="contact" class="menu_item">Contact</a></li>
+      </ul>
+      <div class="content active" id="about">
+        about about about
+      </div>
+      <div class="content" id="service">
+        service service service
+      </div>
+      <div class="content" id="contact">
+        contact contact contact
+      </div>
+    </div>
+  </section>
+  <script>
+  (function() {
+    'use strinct';
+
+    var menuItems = document.getElementsByClassName('menu_item');
+    var contents = document.getElementsByClassName('content');
+
+    var i;
+
+    for (i = 0; i < menuItems.length; i++) {
+      menuItems[i].addEventListener('click', function(e) {
+        e.preventDefault();
+
+        var j;
+
+        for (j = 0; j < menuItems.length; j++) {
+          menuItems[j].className = 'menu_item';
+        }
+        this.className = 'menu_item active';
+
+        for (j = 0; j < contents.length; j++) {
+          contents[j].className = 'content';
+        }
+
+        document.getElementById(this.dataset.id).className = 'content active';
+
+      });
+    }
+
+  })();
+  </script>
+</body>
+</html>
